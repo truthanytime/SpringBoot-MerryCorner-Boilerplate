@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<header th:fragment="navbar" class="header sticky-top">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-6 v-logo">
+                <a href="http://localhost:8082/myportal/">
+                    <img th:src="@{/assets/images/mc_logo_1.png}">
+                </a>
+            </div>
+            <div class="col-lg-9 d-lg-block d-none text-end">
+                <div class="v-menu">
+                    <ul>
+                        <li th:classappend="${'current-menu-item'}"><a href="#">About Us</a></li>
+                        <li th:classappend="${''}"><a href="#">Our Services</a></li>
+                        <li th:classappend="${''}"><a href="#">Gallery</a></li>
+                        <li th:classappend="${''}"><a href="#">Contact Us</a></li>
+                        <li th:classappend="${''}" sec:authorize="!isAuthenticated()">
+                            <a th:href="@{/signup}">Register</a>
+                        </li>
+                        <li class="v-cta" sec:authorize="!isAuthenticated()">
+                            <a th:href="@{/login}">Login</a>
+                        </li>
+                        <li class="v-cta" sec:authorize="isAuthenticated()">
+                            <a th:href="@{/logout}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                        </li>
+                        <form id="logout-form" th:action="@{/logout}" method="post" style="display: none;">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 d-lg-none d-block text-end">
+                <div class="v-mobile-menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                    <i class="fas fa-bars"></i> MENU
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--mobile menu-->
+    <div class="offcanvas offcanvas-start v-mobile-menu v-menu" tabindex="-1" id="offcanvasMenu"
+         aria-labelledby="offcanvasMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title v-logo" id="offcanvasMenuleLabel">
+                <a href="http://localhost:8082/myportal/">
+                    <h3 class="v-title"><span class="color-1 bb">Merry</span> Corner</h3>
+                </a>
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul>
+                <li th:classappend="${''}"><a href="/about">About Us</a></li>
+                <li th:classappend="${''}"><a href="/ourservices">Our Services</a></li>
+                <li th:classappend="${''}"><a href="/gallery">Gallery</a></li>
+                <li th:classappend="${''}"><a href="/contactus">Contact Us</a></li>
+                <li th:classappend="${''}" sec:authorize="!isAuthenticated()">
+                    <a th:href="@{/signup}">Register</a>
+                </li>
+                <li class="v-cta" sec:authorize="!isAuthenticated()">
+                    <a th:href="@{/login}">Login</a>
+                </li>
+                <li sec:authorize="isAuthenticated()">
+                    This content is only shown to authenticated users.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--mobile menu-->
+</header>
+</html>

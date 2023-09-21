@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login | Merry Corner</title>
+
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/images/favicon.png}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/assets/css/auth/adminlte.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/auth/default.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/auth/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/auth/media.css}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <img th:src="@{/assets/images/mc_logo_1.png}" width="300px">
+    </div>
+    <!-- /.login-logo -->
+    <layout:include layout:fragment="content" />
+</div>
+<!-- /.login-box -->
+
+<!--Script-->
+<!-- jQuery -->
+<script th:src="@{/assets/js/jquery-3.2.1.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+
+<!-- AdminLTE App -->
+<script th:src="@{/assets/js/adminlte.min.js}"></script>
+</body>
+</html>

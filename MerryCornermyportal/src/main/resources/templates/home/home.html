@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layouts/main-layout}"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<body>
+<div layout:fragment="content" class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="v-title " id="contactus">Customer<span class="color-1 bb"> Portal</span></h3>
+            <p> Introducing the Ultimate Event Management Software: Merry Corner My Portal</p>
+        </div>
+    </div>
+    <div sec:authorize="!isAuthenticated()">
+        This content is visible to non-authenticated users.
+    </div>
+    <div sec:authorize="hasRole('HOST')">
+        This content is visible to authenticated and had "HOST" role users.
+    </div>
+</div>
+</body>
+</html>

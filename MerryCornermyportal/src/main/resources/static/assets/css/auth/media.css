@@ -1,0 +1,53 @@
+@media screen and (max-width: 1200px) {
+    .claTable .btn {
+        padding: 0 2px;
+        margin: 1px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-header {
+        background: #2EA3F2;
+    }
+
+    .main-header .navbar-nav .nav-link {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .claAction {
+        text-align: left;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-header .navbar-nav .nav-link {
+        font-size: 13px;
+    }
+
+    .page-link {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+
+}
+
+@media (max-device-width: 42mm)
+and (min-device-width: 38mm) {
+
+}
+
+
+/*Sidebar Media*/
+@media (min-width: 768px) {
+    body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
+        transition: margin-left .3s ease-in-out;
+        margin-left: 300px;
+    }
+}
+/*Sidebar Media*/
